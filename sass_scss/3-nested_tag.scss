@@ -1,0 +1,10 @@
+/* Task: Remove margin and padding in body tags, and assign margin 10px to p tags inside body tags */
+
+body {
+  margin: 0px;
+  padding: 0px;
+
+  p {
+    margin: 10px;
+  }
+}
