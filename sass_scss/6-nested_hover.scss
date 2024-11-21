@@ -1,9 +1,9 @@
-/* Task: Assign text color to button tags and change color on hover. */
+/* Task: Assign text color to button tags and change color on hover using nested declarations */
 
 button {
   color: #FF0000;
 
-  &:hover {
+  :hover {
     color: #00FF00;
   }
 }
