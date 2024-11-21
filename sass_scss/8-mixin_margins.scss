@@ -1,0 +1,14 @@
+/* Task: Assign margin-left and margin-right to body and div tags using a mixin */
+
+@mixin set-margins($left, $right) {
+  margin-left: $left;
+  margin-right: $right;
+}
+
+body {
+  @include set-margins(10px, 10px);
+}
+
+div {
+  @include set-margins(15px, 15px);
+}
