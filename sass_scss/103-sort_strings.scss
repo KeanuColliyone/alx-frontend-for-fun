@@ -1,0 +1,38 @@
+/* Task: Sort the list and print it in the debug output */
+
+$list_to_sort: john anna zoe kim felicia carrie;
+
+// Function to find the minimum value in a list
+@function min($list) {
+  $min: nth($list, 1);
+  @each $item in $list {
+    @if str-length($item) < str-length($min) or ($item < $min and str-length($item) == str-length($min)) {
+      $min: $item;
+    }
+  }
+  @return $min;
+}
+
+// Function to remove an item from a list
+@function remove($list, $item) {
+  $new-list: ();
+  @each $i in $list {
+    @if $i != $item {
+      $new-list: append($new-list, $i);
+    }
+  }
+  @return $new-list;
+}
+
+// Recursive function to sort the list
+@function sort($list) {
+  @if length($list) == 0 {
+    @return ();
+  }
+  $min-item: min($list);
+  @return append($min-item, sort(remove($list, $min-item)));
+}
+
+// Sort the list and print it
+$sorted_list: sort($list_to_sort);
+@debug $sorted_list;
