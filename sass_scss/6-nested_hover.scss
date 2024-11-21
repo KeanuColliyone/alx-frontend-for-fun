@@ -1,12 +1,9 @@
-/* Task: Assign text color and hover effect using nested declarations with variables */
-
-$default-color: #FF0000;
-$hover-color: #00FF00;
+/* Task: Assign text color and hover effect using nested declarations */
 
 button {
-  color: $default-color;
+  color: #FF0000;
 
-  &:hover {
-    color: $hover-color;
+  :hover {
+    color: #00FF00;
   }
 }
