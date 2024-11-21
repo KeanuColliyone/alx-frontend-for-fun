@@ -2,18 +2,18 @@
 
 $list_to_sort: john anna zoe kim felicia carrie;
 
-// Function to find the minimum value in a list
+// Function to find the minimum string alphabetically
 @function min($list) {
   $min: nth($list, 1);
   @each $item in $list {
-    @if str-length($item) < str-length($min) or ($item < $min and str-length($item) == str-length($min)) {
+    @if str-slice($item, 1) < str-slice($min, 1) {
       $min: $item;
     }
   }
   @return $min;
 }
 
-// Function to remove an item from a list
+// Function to remove a specific string from the list
 @function remove($list, $item) {
   $new-list: ();
   @each $i in $list {
@@ -24,15 +24,16 @@ $list_to_sort: john anna zoe kim felicia carrie;
   @return $new-list;
 }
 
-// Recursive function to sort the list
+// Recursive sorting function
 @function sort($list) {
   @if length($list) == 0 {
     @return ();
   }
+
   $min-item: min($list);
-  @return append($min-item, sort(remove($list, $min-item)));
+  @return append($min-item, sort(remove($list, $min-item)), comma);
 }
 
-// Sort the list and print it
+// Sort the list and debug output
 $sorted_list: sort($list_to_sort);
 @debug $sorted_list;
