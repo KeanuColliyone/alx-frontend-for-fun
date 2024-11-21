@@ -1,0 +1,9 @@
+/* Task: Assign text colors using nested declarations for elements inside body tags and direct children */
+
+body {
+  color: #3D3D3D;
+
+  > .red {
+    color: #FF0000;
+  }
+}
