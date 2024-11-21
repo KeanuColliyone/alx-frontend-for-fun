@@ -1,9 +1,14 @@
-/* Task: Assign text color to button tags and change color on hover using nested declarations */
+/* Task: Assign text color and hover effect using nested declarations with deep nesting */
 
 button {
   color: #FF0000;
 
-  :hover {
+  &:hover {
     color: #00FF00;
+  }
+
+  &::before {
+    content: 'Button:';
+    display: inline-block;
   }
 }
