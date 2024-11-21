@@ -1,0 +1,9 @@
+/* Task: Assign font sizes to h1 tags with media query for smaller screens */
+
+h1 {
+  font-size: 20px;
+
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+}
