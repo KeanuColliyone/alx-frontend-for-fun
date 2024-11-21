@@ -1,14 +1,12 @@
-/* Task: Assign text color and hover effect using nested declarations with deep nesting */
+/* Task: Assign text color and hover effect using nested declarations with variables */
+
+$default-color: #FF0000;
+$hover-color: #00FF00;
 
 button {
-  color: #FF0000;
+  color: $default-color;
 
   &:hover {
-    color: #00FF00;
-  }
-
-  &::before {
-    content: 'Button:';
-    display: inline-block;
+    color: $hover-color;
   }
 }
